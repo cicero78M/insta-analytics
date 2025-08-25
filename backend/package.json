@@ -14,7 +14,8 @@
     "typescript": "^5.4.5"
   },
   "scripts": {
-    "dev": "node --env-file=.env ./dist/api/server.js",
+    "dev": "npm run build && node --env-file=.env ./dist/api/server.js",
+    "build": "tsc",
     "ingest": "node --env-file=.env ./dist/ingest/jobs.js"
   }
 }
