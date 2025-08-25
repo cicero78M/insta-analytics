@@ -16,9 +16,9 @@ frontend/ # Next.js dashboard for metrics visualization
    cd backend
    npm install
    ```
-2. Compile the TypeScript sources:
+2. Build the TypeScript sources:
    ```bash
-   npx tsc
+   npm run build
    ```
 3. Provide environment variables in `backend/.env`:
    - `RAPIDAPI_KEY` – RapidAPI key for Instagram provider
