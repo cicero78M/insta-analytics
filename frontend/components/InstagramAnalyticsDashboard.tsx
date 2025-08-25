@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-async function fetchJSON(url: string) { const r = await fetch(url); return r.json(); }
+import { api } from '../lib/fetcher';
 
 export default function InstagramAnalyticsDashboard() {
   const [overview, setOverview] = useState<any>(null);
@@ -13,9 +12,9 @@ export default function InstagramAnalyticsDashboard() {
   const to = new Date().toISOString().slice(0,10);
 
   useEffect(() => {
-    fetchJSON(`/api/metrics/overview?from=${from}&to=${to}`).then(setOverview);
-    fetchJSON(`/api/sentiment/series?from=${from}&to=${to}`).then(setSentSeries);
-    fetchJSON(`/api/mentions/latest?limit=12`).then(setLatest);
+    api(`/api/metrics/overview?from=${from}&to=${to}`).then(setOverview);
+    api(`/api/sentiment/series?from=${from}&to=${to}`).then(setSentSeries);
+    api(`/api/mentions/latest?limit=12`).then(setLatest);
   }, []);
 
   const kpi = overview?.total || {mentions:0, est_reach:0, likes:0, comments:0, pos:0, neg:0, neu:0};
