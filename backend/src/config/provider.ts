@@ -10,10 +10,10 @@ export type ProviderProfile = {
 };
 
 export const PROVIDERS: Record<string, ProviderProfile> = {
-  // Example: instagram188 (widely used on RapidAPI; verify docs)
-  instagram188: {
-    name: 'instagram188',
-    host: process.env.RAPIDAPI_HOST || 'instagram188.p.rapidapi.com',
+  // RapidAPI Social API4 provider
+  'social-api4': {
+    name: 'social-api4',
+    host: process.env.RAPIDAPI_HOST || 'social-api4.p.rapidapi.com',
     paths: {
       userByUsername: (u) => `/user/info?username=${encodeURIComponent(u)}`,
       userPosts: (id, cursor) => `/user/posts?userid=${id}${cursor ? `&end_cursor=${cursor}` : ''}`,
@@ -35,6 +35,6 @@ export const PROVIDERS: Record<string, ProviderProfile> = {
   },
 };
 
-export function pickProvider(key = process.env.PROVIDER_PROFILE || 'instagram188'): ProviderProfile {
+export function pickProvider(key = process.env.PROVIDER_PROFILE || 'social-api4'): ProviderProfile {
   return PROVIDERS[key];
 }

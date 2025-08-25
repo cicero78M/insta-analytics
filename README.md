@@ -23,7 +23,7 @@ frontend/ # Next.js dashboard for metrics visualization
 3. Provide environment variables in `backend/.env`:
    - `RAPIDAPI_KEY` – RapidAPI key for Instagram provider
    - `RAPIDAPI_HOST` – (optional) override provider host
-   - `PROVIDER_PROFILE` – (optional) provider profile name, defaults to `instagram188`
+   - `PROVIDER_PROFILE` – (optional) provider profile name, defaults to `social-api4`
    - `BRAND_ALIASES` – comma-separated list of hashtags/usernames to track
    - standard `pg` settings for PostgreSQL (`PGHOST`, `PGDATABASE`, `PGUSER`, etc.)
 4. Start the API server:
