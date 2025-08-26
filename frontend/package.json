@@ -17,8 +17,8 @@
     "autoprefixer": "^10.4.16"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_ENV=development next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production next start"
   }
 }
